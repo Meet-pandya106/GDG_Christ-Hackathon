@@ -1,0 +1,6 @@
+{
+  "name": "NEOFORGE",
+  "description": "Universal Content Engine — Raw Ideas to Multi-Channel Velocity with Neo-Brutalist precision and deterministic audience calibration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

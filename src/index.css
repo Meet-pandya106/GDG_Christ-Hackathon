@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --paper: #F4F0EA;
+    --paper-2: #EAE4DA;
+    --ink: #0A0A0A;
+    --accent: #DFFF1F;
+    --accent-ink: #0A0A0A;
+    --muted: #555555;
+  }
+
+  .dark {
+    --paper: #121212;
+    --paper-2: #1C1C1E;
+    --ink: #F4F0EA;
+    --accent: #DFFF1F;
+    --accent-ink: #0A0A0A;
+    --muted: #A0A0A0;
+  }
+
+  /* Accent presets */
+  [data-accent="lime"] {
+    --accent: #DFFF1F;
+    --accent-ink: #0A0A0A;
+  }
+  [data-accent="cyan"] {
+    --accent: #00F0FF;
+    --accent-ink: #0A0A0A;
+  }
+  [data-accent="punch"] {
+    --accent: #FF2A85;
+    --accent-ink: #FFFFFF;
+  }
+  [data-accent="orange"] {
+    --accent: #FF5500;
+    --accent-ink: #FFFFFF;
+  }
+  [data-accent="violet"] {
+    --accent: #A855F7;
+    --accent-ink: #FFFFFF;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  /* Custom selection color */
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-ink);
+  }
+}
+
+/* Custom Neo-Brutalist utility classes mapping to variables */
+.bg-paper {
+  background-color: var(--paper);
+}
+.bg-paper-2 {
+  background-color: var(--paper-2);
+}
+.bg-ink {
+  background-color: var(--ink);
+}
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.text-paper {
+  color: var(--paper);
+}
+.text-ink {
+  color: var(--ink);
+}
+.text-accent {
+  color: var(--accent);
+}
+.text-accent-ink {
+  color: var(--accent-ink);
+}
+.text-muted {
+  color: var(--muted);
+}
+
+.border-ink {
+  border-color: var(--ink);
+}
+.border-accent {
+  border-color: var(--accent);
+}
+.border-paper {
+  border-color: var(--paper);
+}
+
+.fill-accent {
+  fill: var(--accent);
+}
+
+.font-display {
+  font-family: 'Syne', 'Cabinet Grotesk', 'Space Grotesk', sans-serif;
+}
+
+/* Keyframe animations */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes heart-pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.35);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes tab-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-heart-pop {
+  animation: heart-pop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.animate-tab-fade {
+  animation: tab-fade-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2.5s ease-in-out infinite;
+}
+
+/* Smooth micro-interaction transitions */
+button, a, input, select, textarea {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 150ms;
+}
